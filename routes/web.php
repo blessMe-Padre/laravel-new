@@ -45,4 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// работа с отзывами на странице админа
+Route::get('/home/reviews', [MainController::class, 'adminReviews'])->name('admin.adminreviews');
+Route::get('/home/reviews/{id}', [ MainController::class, 'reviews_one_admin' ])->name('reviews_one_admin');
+
 require __DIR__.'/auth.php';

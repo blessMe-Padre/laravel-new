@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
+    public function adminReviews() {
+        $reviews = new ContactModel();
+        return view('admin.adminreviews', ['reviews' => $reviews->all()]);
+    }
+
     public function home() {
         return view('welcome');
     }
@@ -23,6 +28,11 @@ class MainController extends Controller
     public function reviews_one($id) {
         $reviews = new ContactModel();
         return view('reviews_one', ['data' => $reviews->find($id)]);
+    }
+
+    public function reviews_one_admin($id) {
+        $reviews = new ContactModel();
+        return view('reviews_one_admin', ['data' => $reviews->find($id)]);
     }
 
     public function reviews_edit($id) {

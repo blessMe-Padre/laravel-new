@@ -13,6 +13,16 @@
                 </div>
             </div>
         </div>
+
+        @foreach ($reviews as $review)
+            <div class="alert alert-warning col">
+                <h2>{{ $review->name }}</h2>
+                <p>{{ $review->email }}</p>
+                <p>{{ $review->massage }}</p>
+
+                <a href="{{ route('reviews_one_admin', $review->id) }}" class="btn btn-success">Подробнее</a>
+            </div>
+        @endforeach
     </div>
 
 </x-app-layout>
