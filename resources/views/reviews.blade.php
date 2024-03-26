@@ -3,7 +3,7 @@
 @section('title')
     Отзывы
 @endsection
-
+{{-- TODO сделать кнопку "добавить отзывы", сама форма в модальном окне   --}}
 @section('main_content')
     <h1>Отзывы. Работа с формой</h1>
     <br>
@@ -50,6 +50,8 @@
                 <h3>{{ $el->name }}</h3>
                 <p>{{ $el->email }}</p>
                 <p>{{ $el->massage }}</p>
+
+                <a href="{{ route('reviews_one', $el->id) }}" class="btn btn-success">Подробнее</a>
             </div>
         @endforeach
     </div>

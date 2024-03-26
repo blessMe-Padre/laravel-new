@@ -20,6 +20,11 @@ class MainController extends Controller
         return view('reviews', ['reviews' => $reviews->all()]);
     }
 
+    public function reviews_one($id) {
+        $reviews = new ContactModel();
+        return view('reviews_one', ['data' => $reviews->find($id)]);
+    }
+
     public function reviews_check(Request $request) {
         $valid = $request->validate([
             'name' => 'required | min:3',
