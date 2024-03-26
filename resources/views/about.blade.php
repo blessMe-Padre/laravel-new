@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('title')
-    Главная
+    О нас
 @endsection
 
 @section('main_content')
-    <h1>Главная</h1>
+    <h1>about</h1>
 @endsection

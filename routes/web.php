@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
+// Action-синтаксис (не забудьте импортировать класс контроллера)
+use App\Http\Controllers\MainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ MainController::class, 'home' ]);
+
+Route::get('/about', [ MainController::class, 'about' ]);
+
+Route::get('/reviews', [ MainController::class, 'reviews' ])->name('reviews');
+
+Route::post('/reviews/check', [ MainController::class, 'reviews_check' ]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

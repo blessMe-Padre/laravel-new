@@ -7,5 +7,7 @@
     "Forgot your password?": "Забыли пароль?",
     "Register": "Регистрация",
     "Log in": "Вход",
-    "Dashboard": "Админка"
+    "Dashboard": "Админка",
+    "You're logged as Admin!": "Вы вошли как админ",
+    "Admin Dashboard": "Панель администратора"
 }
