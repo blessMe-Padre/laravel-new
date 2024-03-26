@@ -25,6 +25,11 @@ class MainController extends Controller
         return view('reviews_one', ['data' => $reviews->find($id)]);
     }
 
+    public function reviews_edit($id) {
+        $reviews = new ContactModel();
+        return view('reviews-edit', ['data' => $reviews->find($id)]);
+    }
+
     public function reviews_check(Request $request) {
         $valid = $request->validate([
             'name' => 'required | min:3',
@@ -39,5 +44,21 @@ class MainController extends Controller
         $review->save();
 
         return redirect()->route('reviews');
+    }
+
+    public function reviews_check_submit($id, Request $request) {
+        $valid = $request->validate([
+            'name' => 'required | min:3',
+            'massage' => 'required | min:10',
+        ]);
+
+        $review = ContactModel::find($id);
+        $review->name = $request->input('name');
+        $review->email = $request->input('email');
+        $review->massage = $request->input('massage');
+
+        $review->save();
+
+        return redirect()->route('reviews-edit', $id);
     }
 }

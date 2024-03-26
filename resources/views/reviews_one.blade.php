@@ -15,6 +15,7 @@
             <p>{{ $data->massage }}</p>
 
             <a href="/reviews" class="btn btn-success">Назад</a>
+            <a href="{{ route('reviews-edit', $data->id) }}" class="btn btn-success">Редактировать</a>
         </div>
     </div>
 @endsection

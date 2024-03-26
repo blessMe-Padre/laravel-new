@@ -26,6 +26,9 @@ Route::get('/reviews', [ MainController::class, 'reviews' ])->name('reviews');
 
 Route::get('/reviews/{id}', [ MainController::class, 'reviews_one' ])->name('reviews_one');
 
+Route::get('/reviews/{id}/edit}', [ MainController::class, 'reviews_edit' ])->name('reviews-edit');
+Route::post('/reviews/{id}/edit}', [ MainController::class, 'reviews_check_submit' ])->name('reviews-edit_submit');
+
 Route::post('/reviews/check', [ MainController::class, 'reviews_check' ]);
 
 Route::get('/dashboard', function () {
