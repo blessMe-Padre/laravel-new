@@ -14,7 +14,7 @@
             <p>{{ $data->email }}</p>
             <p>{{ $data->massage }}</p>
 
-            <a href="{{ route('reviews_one', $data->id) }}" class="btn btn-success">Подробнее</a>
+            <a href="/reviews" class="btn btn-success">Назад</a>
         </div>
     </div>
 @endsection
