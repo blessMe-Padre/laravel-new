@@ -16,6 +16,7 @@
 
             <a href="/reviews" class="btn btn-success">Назад</a>
             <a href="{{ route('reviews-edit', $data->id) }}" class="btn btn-success">Редактировать</a>
+            <a href="{{ route('reviews-delete', $data->id) }}" class="btn btn-danger">Удалить</a>
         </div>
     </div>
 @endsection

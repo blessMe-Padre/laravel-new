@@ -29,6 +29,8 @@ Route::get('/reviews/{id}', [ MainController::class, 'reviews_one' ])->name('rev
 Route::get('/reviews/{id}/edit}', [ MainController::class, 'reviews_edit' ])->name('reviews-edit');
 Route::post('/reviews/{id}/edit}', [ MainController::class, 'reviews_check_submit' ])->name('reviews-edit_submit');
 
+Route::get('/reviews/{id}/delete}', [ MainController::class, 'deleteReviews' ])->name('reviews-delete');
+
 Route::post('/reviews/check', [ MainController::class, 'reviews_check' ]);
 
 Route::get('/dashboard', function () {

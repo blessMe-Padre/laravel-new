@@ -61,4 +61,9 @@ class MainController extends Controller
 
         return redirect()->route('reviews-edit', $id);
     }
+
+    public function deleteReviews($id) {
+        ContactModel::find($id)->delete();
+        return redirect()->route('reviews');
+    }
 }
