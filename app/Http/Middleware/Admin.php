@@ -20,7 +20,10 @@ class Admin
         {
             return $next($request);
         }
-
-        abort(401);
+        else
+        {
+            // return view('dashboard');
+            return redirect()->back();
+        }
     }
 }
