@@ -15,14 +15,15 @@
         </div>
     </div>
 
-    <div class="alert alert-warning col">
-        <h3>{{ $data->name }}</h3>
-        <p>{{ $data->email }}</p>
-        <p>{{ $data->massage }}</p>
+    <div class="container">
+        <div class="alert alert-warning col">
+            <h3 class="mb-2">{{ $data->name }}</h3>
+            <p class="mb-2">{{ $data->email }}</p>
+            <p class="mb-2">{{ $data->massage }}</p>
 
-        <a href="/reviews" class="btn btn-success">Назад</a>
-        <a href="{{ route('reviews-edit', $data->id) }}" class="btn btn-success">Редактировать</a>
-        <a href="{{ route('reviews-delete', $data->id) }}" class="btn btn-danger">Удалить</a>
+            <a href="/home/reviews" class="btn btn-success">Назад</a>
+            <a href="{{ route('reviews-edit', $data->id) }}" class="btn btn-success">Редактировать</a>
+            <a href="{{ route('reviews-delete', $data->id) }}" class="btn btn-danger">Удалить</a>
+        </div>
     </div>
-
 </x-app-layout>
